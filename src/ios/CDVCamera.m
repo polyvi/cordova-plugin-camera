@@ -68,6 +68,7 @@ static NSSet* org_apache_cordova_validArrowDirections;
  *  9       saveToPhotoAlbum
  *  10      popoverOptions
  *  11      cameraDirection
+ *  12      cropToSize
  */
 - (void)takePicture:(CDVInvokedUrlCommand*)command
 {
@@ -116,7 +117,7 @@ static NSSet* org_apache_cordova_validArrowDirections;
     cameraPicker.allowsEditing = allowEdit; // THIS IS ALL IT TAKES FOR CROPPING - jm
     cameraPicker.callbackId = callbackId;
     cameraPicker.targetSize = targetSize;
-    cameraPicker.cropToSize = NO;
+    cameraPicker.cropToSize = [[arguments objectAtIndex:12] boolValue];
     // we need to capture this state for memory warnings that dealloc this object
     cameraPicker.webView = self.webView;
     cameraPicker.popoverSupported = [self popoverSupported];
