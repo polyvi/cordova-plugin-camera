@@ -20,3 +20,23 @@
 -->
 # Release Note X
 
+
+### 0.2.6 Wed Jan 08 2014 15:13:51 GMT+0800 (CST)
+ *  added releasenotex.md
+ *  CB-5719 Updated version and RELEASENOTES.md for release 0.2.6
+ *  CB-5658 Update license comment formatting of doc/index.md
+ *  CB-5658 Add doc.index.md for Camera plugin
+ *  CB-5658 Delete stale snapshot of plugin docs
+ *  [iOS] Added cropToSize option to allow users to resize image and crop to target size
+ *  add .reviewboardrc
+ *  CB-2442 CB-2419 Use Windows.Storage.ApplicationData.current.localFolder, instead of writing to app package.
+ *  [BlackBerry10] Adding platform level permissions
+ *  CB-5599 Android: Catch and ignore OutOfMemoryError in getRotatedBitmap()
+ *  [CB-5565] Incremented plugin version on dev branch.
+ *  [CB-5565] Updated version and RELEASENOTES.md for release 0.2.5
+ *  fix camera for firefox os
+ *  getPicture via web activities
+ *  [ubuntu] specify policy_group
+ *  add ubuntu platform
+ *  1. User Agent detection now detects AmazonWebView. 2. Change to use amazon-fireos as the platform if user agent string contains 'cordova-amazon-fireos'
+ *  Added amazon-fireos platform.
