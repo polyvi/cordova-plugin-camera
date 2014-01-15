@@ -33,8 +33,7 @@
 <script type="text/javascript" charset="utf-8">
 
     var deviceReady = false;
-    var platformId = null;
-    var CameraPopoverOptions = null;
+    var platformId = cordova.require('cordova/platform').id;
     var pictureUrl = null;
     var fileObj = null;
     var fileEntry = null;
@@ -289,7 +288,7 @@
             var value = el.value;
             if (value === '') continue;
             if (el.isBool) {
-                ret[el.keyName] = !!value;
+                ret[el.keyName] = !!+value;
             } else {
                 ret[el.keyName] = +value;
             }
@@ -339,8 +338,6 @@
     function init() {
         document.addEventListener("deviceready", function() {
             deviceReady = true;
-            platformId = cordova.require('cordova/platform').id;
-            CameraPopoverOptions = cordova.require('org.apache.cordova.camera.CameraPopoverOptions');
             console.log("Device="+device.platform+" "+device.version);
             createOptionsEl('sourceType', Camera.PictureSourceType, camPictureSourceTypeDefault);
             createOptionsEl('destinationType', Camera.DestinationType, camDestinationTypeDefault);
