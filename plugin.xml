@@ -41,7 +41,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Camera">
-                <param name="android-package" value="org.apache.cordova.camera.CameraLauncher"/>
+                <param name="android-package" value="org.apache.cordova.camera.XCameraLauncher"/>
             </feature>
         </config-file>
         <config-file target="AndroidManifest.xml" parent="/*">
@@ -49,10 +49,32 @@
             <uses-feature android:name="android.hardware.camera" />
             <uses-feature android:name="android.hardware.camera.autofocus" />
         </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="org.apache.cordova.camera.ImageCroppingActivity" />
+        </config-file>
+        <config-file target="res/xml/xface_string.xml" parent="/resources">
+            <string name="crop_save_text" >保存</string>
+            <string name="crop_discard_text" >取消</string>
+            <string name="runningFaceDetection" >请稍后...</string>
+        </config-file>
 
         <source-file src="src/android/CameraLauncher.java" target-dir="src/org/apache/cordova/camera" />
         <source-file src="src/android/FileHelper.java" target-dir="src/org/apache/cordova/camera" />
         <source-file src="src/android/ExifHelper.java" target-dir="src/org/apache/cordova/camera" />
+        <!-- crop image part -->
+        <source-file src="src/android/CropImageView.java" target-dir="src/org/apache/cordova/camera" />
+        <source-file src="src/android/HighlightView.java" target-dir="src/org/apache/cordova/camera" />
+        <source-file src="src/android/ImageCroppingActivity.java" target-dir="src/org/apache/cordova/camera" />
+        <source-file src="src/android/ImageCroppingView.java" target-dir="src/org/apache/cordova/camera" />
+        <source-file src="src/android/ImageViewTouchBase.java" target-dir="src/org/apache/cordova/camera" />
+        <source-file src="src/android/MonitoredActivity.java" target-dir="src/org/apache/cordova/camera" />
+        <source-file src="src/android/RotateBitmap.java" target-dir="src/org/apache/cordova/camera" />
+        <source-file src="src/android/XCameraLauncher.java" target-dir="src/org/apache/cordova/camera" />
+        <source-file src="src/android/XResourceManager.java" target-dir="src/org/apache/cordova/camera" />
+
+        <source-file src="src/android/camera_crop_height.png" target-dir="res/drawable-hdpi" />
+        <source-file src="src/android/camera_crop_width.png" target-dir="res/drawable-hdpi" />
+        <source-file src="src/android/indicator_autocrop.png" target-dir="res/drawable-hdpi" />
 
         <js-module src="www/CameraPopoverHandle.js" name="CameraPopoverHandle">
             <clobbers target="CameraPopoverHandle" />

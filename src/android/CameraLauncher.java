@@ -76,15 +76,15 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
     
     private static final String LOG_TAG = "CameraLauncher";
 
-    private int mQuality;                   // Compression quality hint (0-100: 0=low quality & high compression, 100=compress of max quality)
-    private int targetWidth;                // desired width of the image
-    private int targetHeight;               // desired height of the image
-    private Uri imageUri;                   // Uri of captured image
-    private int encodingType;               // Type of encoding to use
+    protected int mQuality;                   // Compression quality hint (0-100: 0=low quality & high compression, 100=compress of max quality)
+    protected int targetWidth;                // desired width of the image
+    protected int targetHeight;               // desired height of the image
+    protected Uri imageUri;                   // Uri of captured image
+    protected int encodingType;               // Type of encoding to use
     private int mediaType;                  // What type of media to retrieve
-    private boolean saveToPhotoAlbum;       // Should the picture be saved to the device's photo album
+    protected boolean saveToPhotoAlbum;       // Should the picture be saved to the device's photo album
     private boolean correctOrientation;     // Should the pictures orientation be corrected
-    //private boolean allowEdit;              // Should we allow the user to crop the image. UNUSED.
+    protected boolean allowEdit;              // Should we allow the user to crop the image. UNUSED.
 
     public CallbackContext callbackContext;
     private int numPics;
@@ -120,7 +120,7 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
             this.targetHeight = args.getInt(4);
             this.encodingType = args.getInt(5);
             this.mediaType = args.getInt(6);
-            //this.allowEdit = args.getBoolean(7); // This field is unused.
+            this.allowEdit = args.getBoolean(7); // This field is unused.
             this.correctOrientation = args.getBoolean(8);
             this.saveToPhotoAlbum = args.getBoolean(9);
 
@@ -393,7 +393,7 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
 
         // If retrieving photo from library
         else if ((srcType == PHOTOLIBRARY) || (srcType == SAVEDPHOTOALBUM)) {
-            if (resultCode == Activity.RESULT_OK) {
+            if (resultCode == Activity.RESULT_OK && null != intent) {
                 Uri uri = intent.getData();
 
                 // If you ask for video or all media type you will automatically get back a file URI
