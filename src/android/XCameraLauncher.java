@@ -272,9 +272,9 @@ public class XCameraLauncher extends CameraLauncher {
 
                 // 将图像路径作为参数，调用success callback
                 XPathResolver pathResolver = new XPathResolver(uri.toString(),
-                        "", cordova.getActivity());
+                        "");
                 this.callbackContext.success(XConstant.FILE_SCHEME
-                        + pathResolver.resolve());
+                        + pathResolver.resolve(this.webView.getResourceApi()));
             }
             scaleBitmap.recycle();
             scaleBitmap = null;
@@ -474,11 +474,11 @@ public class XCameraLauncher extends CameraLauncher {
         }
         ContentResolver resolver = cordova.getActivity().getContentResolver();
         XPathResolver pathResolver = new XPathResolver(null == uri ? null
-                : uri.toString(), "", cordova.getActivity());
+                : uri.toString(), "");
         Bitmap bitmap = null;
         try {
             if (!allowEdit) {
-                String path = pathResolver.resolve();
+                String path = pathResolver.resolve(this.webView.getResourceApi());
                 if (!XStringUtils.isEmptyString(path)) {
                     bitmap = XUtils.decodeBitmap(path);
                 }
@@ -539,7 +539,7 @@ public class XCameraLauncher extends CameraLauncher {
             }
         } else {
             this.callbackContext.success(XConstant.FILE_SCHEME
-                    + pathResolver.resolve());
+                    + pathResolver.resolve(this.webView.getResourceApi()));
         }
     }
 
