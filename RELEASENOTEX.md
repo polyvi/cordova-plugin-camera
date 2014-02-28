@@ -42,3 +42,28 @@
  *  Added amazon-fireos platform.
  *  batch modify .reviewboard
  *  sync cordova-mobile-spec into camera
+
+
+## 0.2.8 (Fri Feb 28 2014)
+
+
+ *  Revert test
+ *  CB-5980 Updated version and RELEASENOTES.md for release 0.2.7
+ *  remove unrequired FFOS file
+ *  reapply new version of FFOS config in plugin.xml
+ *  remove 2nd FFOS platform config in plugin.xml
+ *  typo
+ *  CB-4919 firefox os quirks added and supported platforms list is updated
+ *  getPicture via web activities
+ *  Documented quirk for CB-5335 + CB-5206 for WP7+8
+ *  reference the correct firefoxos implementation
+ *  Delete stale test/ directory
+ *  [BlackBerry10] Add permission to access_shared
+ *  CB-5719 Incremented plugin version on dev branch.
+ *  Documented quirk for CB-5335 + CB-5206 for WP7+8
+ *  CB-5719 Updated version and RELEASENOTES.md for release 0.2.6
+ *  CB-5658 Update license comment formatting of doc/index.md
+ *  CB-5658 Add doc.index.md for Camera plugin
+ *  CB-5658 Delete stale snapshot of plugin docs
+ *  [Android]Camera crop photos fixed codes error
+ *  [android]Add crop photos feature into cordova-plugin-camera
