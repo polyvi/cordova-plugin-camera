@@ -22,6 +22,7 @@
 package org.apache.cordova.camera;
 
 
+import android.annotation.SuppressLint;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
@@ -78,6 +79,7 @@ class HighlightView {
         mHidden = hidden;
     }
 
+    @SuppressLint("NewApi")
     protected void draw(Canvas canvas) {
         if (mHidden) {
             return;
@@ -100,7 +102,14 @@ class HighlightView {
                 path.addRect(new RectF(mDrawRect), Path.Direction.CW);
                 mOutlinePaint.setColor(0xFFFF8A00);
             }
-            canvas.clipPath(path, Region.Op.DIFFERENCE);
+            int sdkVersion = android.os.Build.VERSION.SDK_INT;
+            if (sdkVersion < 11) {
+                canvas.clipPath(path, Region.Op.DIFFERENCE);
+            } else {
+                if(!canvas.isHardwareAccelerated()) {
+                    canvas.clipPath(path, Region.Op.DIFFERENCE);
+                }
+            }
             canvas.drawRect(viewDrawingRect, hasFocus() ? mFocusPaint
                     : mNoFocusPaint);
 
