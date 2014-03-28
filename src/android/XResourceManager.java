@@ -1,4 +1,3 @@
-
 /*
  Copyright 2012-2013, Polyvi Inc. (http://polyvi.github.io/openxface)
  This program is distributed under the terms of the GNU General Public License.
@@ -17,7 +16,7 @@
 
  You should have received a copy of the GNU General Public License
  along with xFace.  If not, see <http://www.gnu.org/licenses/>.
-*/
+ */
 
 package org.apache.cordova.camera;
 
@@ -30,35 +29,32 @@ import android.graphics.drawable.Drawable;
  */
 public class XResourceManager {
 
-    protected static XResourceManager instance = null;
-    private static Activity mActivity;
+	protected static XResourceManager instance = null;
+	private static Activity mActivity;
 
-    public static XResourceManager getInstance() {
-        if (instance == null) {
-            instance = new XResourceManager();
-        }
-        return instance;
-    }
+	public static XResourceManager getInstance() {
+		if (instance == null) {
+			instance = new XResourceManager();
+		}
+		return instance;
+	}
 
-    public static void init(Activity activity) {
-        mActivity = activity;
-    }
+	public static void init(Activity activity) {
+		mActivity = activity;
+	}
 
-    public Drawable getCameraCropWidthResource(Resources res) {
-        return res.getDrawable(mActivity.getResources().getIdentifier(
-                "camera_crop_width", "drawable",
-                mActivity.getClass().getPackage().getName()));
-    }
+	public Drawable getCameraCropWidthResource(Resources res) {
+		return res.getDrawable(mActivity.getResources().getIdentifier(
+				"camera_crop_width", "drawable", mActivity.getPackageName()));
+	}
 
-    public Drawable getCameraCropHeightResource(Resources res) {
-        return res.getDrawable(mActivity.getResources().getIdentifier(
-                "camera_crop_height", "drawable",
-                mActivity.getClass().getPackage().getName()));
-    }
+	public Drawable getCameraCropHeightResource(Resources res) {
+		return res.getDrawable(mActivity.getResources().getIdentifier(
+				"camera_crop_height", "drawable", mActivity.getPackageName()));
+	}
 
-    public Drawable getCameraCropIndicatorResource(Resources res) {
-        return res.getDrawable(mActivity.getResources().getIdentifier(
-                "indicator_autocrop", "drawable",
-                mActivity.getClass().getPackage().getName()));
-    }
+	public Drawable getCameraCropIndicatorResource(Resources res) {
+		return res.getDrawable(mActivity.getResources().getIdentifier(
+				"indicator_autocrop", "drawable", mActivity.getPackageName()));
+	}
 }
