@@ -67,3 +67,12 @@
  *  CB-5658 Delete stale snapshot of plugin docs
  *  [Android]Camera crop photos fixed codes error
  *  [android]Add crop photos feature into cordova-plugin-camera
+
+
+## 0.2.9 (Thu Apr 03 2014)
+
+
+ *  fix the xfaceLib is not can read the picture info
+ *  issue 8 xFace Camera:crashed when clicked the 2nd,4th,5th,8th,9th button to take pictures. Bug reason:Views with LAYER_TYPE_SOFTWARE should be drawn with software when Manifest android:hardwareAccelerated=true Solution:verified via canvas.isHardwareAccelerated() to skip canvas.clipPath
+ *  issue 7：Sync cordova tests
+ *  Incremented plugin version on dev branch to 0.2.9-dev
