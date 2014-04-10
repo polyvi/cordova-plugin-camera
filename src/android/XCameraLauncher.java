@@ -271,10 +271,8 @@ public class XCameraLauncher extends CameraLauncher {
                 os.close();
 
                 // 将图像路径作为参数，调用success callback
-                XPathResolver pathResolver = new XPathResolver(uri.toString(),
-                        "");
                 this.callbackContext.success(XConstant.FILE_SCHEME
-                        + pathResolver.resolve(this.webView.getResourceApi()));
+                        + FileHelper.getRealPath(uri, this.cordova));
             }
             scaleBitmap.recycle();
             scaleBitmap = null;
