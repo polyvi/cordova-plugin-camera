@@ -76,3 +76,31 @@
  *  issue 8 xFace Camera:crashed when clicked the 2nd,4th,5th,8th,9th button to take pictures. Bug reason:Views with LAYER_TYPE_SOFTWARE should be drawn with software when Manifest android:hardwareAccelerated=true Solution:verified via canvas.isHardwareAccelerated() to skip canvas.clipPath
  *  issue 7：Sync cordova tests
  *  Incremented plugin version on dev branch to 0.2.9-dev
+
+
+## 0.2.10 (Tue Apr 29 2014)
+
+
+ *  CB-6452 Updated version and RELEASENOTES.md for release 0.2.9
+ *  CB-6460: Update license headers
+ *  CB-6422 [windows8] use cordova/exec/proxy
+ *  WP8 When only targetWidth or targetHeight is provided, use it as the only bound
+ *  Remove rotation test value
+ *  cleanup, finalize implementations/consolidations
+ *  combining callbacks, removing lots of dupe code
+ *  Fix camera issues, cropping, memory leaks CB-4027, CB-5102, CB-2737, CB-2387
+ *  CB-6212 iOS: fix warnings compiled under arm64 64-bit
+ *  Fix typo error in docs
+ *  CB-6212 iOS: fix warnings compiled under arm64 64-bit
+ *  Add rim xml namespaces declaration
+ *  Add NOTICE file
+ *  CB-6114 Updated version and RELEASENOTES.md for release 0.2.8
+ *  Add NOTICE file
+ *  CB-6114 Incremented plugin version on dev branch.
+ *  CB-6114 Updated version and RELEASENOTES.md for release 0.2.8
+ *  CB-1826 Android: Guard against content provider not supplying orientation
+ *  CB-1826 Catch OOM on gallery image resize
+ *  Refactor onActivityResult
+ *  CB-5980 Incremented plugin version on dev branch.
+ *  issue 9 camera: set 'allowEdit' true, take picture success, but display error info. Bug reason:cordova remapUri method handle 'content://...' url error, get more '/' than normal file path, cause to path error from success callback. Solution:Call another method to get photo path
+ *  Incremented plugin version on dev branch to 0.2.10-dev
