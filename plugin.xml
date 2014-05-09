@@ -72,10 +72,15 @@
         <config-file target="AndroidManifest.xml" parent="/manifest/application">
             <activity android:name="org.apache.cordova.camera.ImageCroppingActivity" />
         </config-file>
-        <config-file target="res/xml/xface_string.xml" parent="/resources">
+        <config-file target="res/xml-zh/xface_string.xml" parent="/resources">
             <string name="crop_save_text" >保存</string>
             <string name="crop_discard_text" >取消</string>
             <string name="runningFaceDetection" >请稍后...</string>
+        </config-file>
+        <config-file target="res/xml/xface_string.xml" parent="/resources">
+            <string name="crop_save_text" >Save</string>
+            <string name="crop_discard_text" >Cancel</string>
+            <string name="runningFaceDetection" >Please waiting...</string>
         </config-file>
 
         <source-file src="src/android/CameraLauncher.java" target-dir="src/org/apache/cordova/camera" />
