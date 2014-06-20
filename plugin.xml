@@ -97,9 +97,9 @@
         <source-file src="src/android/XCameraLauncher.java" target-dir="src/org/apache/cordova/camera" />
         <source-file src="src/android/XResourceManager.java" target-dir="src/org/apache/cordova/camera" />
 
-        <source-file src="src/android/camera_crop_height.png" target-dir="res/drawable-hdpi" />
-        <source-file src="src/android/camera_crop_width.png" target-dir="res/drawable-hdpi" />
-        <source-file src="src/android/indicator_autocrop.png" target-dir="res/drawable-hdpi" />
+        <source-file src="src/android/camera_crop_height.png" target-dir="res/drawable" />
+        <source-file src="src/android/camera_crop_width.png" target-dir="res/drawable" />
+        <source-file src="src/android/indicator_autocrop.png" target-dir="res/drawable" />
 
         <js-module src="www/CameraPopoverHandle.js" name="CameraPopoverHandle">
             <clobbers target="CameraPopoverHandle" />
